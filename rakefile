@@ -1,0 +1,8 @@
+require 'lib/anttrap.rb'
+
+RAKE='c:\ruby19\bin\rake.bat'
+ANTFILE='build.xml'
+
+task :Foo do 
+     puts "Hello world"
+end

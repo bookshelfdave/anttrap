@@ -23,6 +23,33 @@ Sample rakefile
 		puts "Hello world"
 	end
 
+
+Sample Generated Ant Build File
+---
+<?xml version="1.0" encoding="ASCII"?>
+<project name="RakeFile Tue Aug 09 13:35:22 -0400 2011">
+  <target name="AntTrap" description="Generate an ant build file from this Rake file">
+    <exec executable="/usr/bin/rake">
+      <arg value="-v"/>
+      <arg value="AntTrap"/>
+    </exec>
+  </target>
+  <target name="Clean" description="Clean">
+    <exec executable="/usr/bin/rake">
+      <arg value="-v"/>
+      <arg value="Clean"/>
+    </exec>
+  </target>
+  <target name="Compile" description="Compile Java">
+    <exec executable="/usr/bin/rake">
+      <arg value="-v"/>
+      <arg value="Compile"/>
+    </exec>
+  </target>
+</project>
+
+
+
 Generating an Ant Build File
 ---
 rake AntTrap

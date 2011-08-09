@@ -1,20 +1,29 @@
-#require 'rubygems'
+# add support for Ruby Gems:
 #export RUBYOPT=rubygems
-##https://gist.github.com/54177
+# or
+#require 'rubygems'
+#https://gist.github.com/54177
 
-require 'lib/anttrap.rb'
+require 'anttrap'
 
+# the name of the Ant project.
+# adding a timestamp may be helpful to you
 AntTrap.antproject="RakeFile #{Time.new}"
+
+# path to the rake binary
+# the default is rake, but you can use what you like here
 AntTrap.rake = '/usr/bin/rake'
+
+# additional arguments to pass to rake
 AntTrap.rakeargs = ["-v"]
 
-desc "The Bar task"
-task :Bar do
-  puts "Bar!"
+desc "Compile Java"
+task :Compile do
+  puts "Compiling Java!"
 end
 
-desc "The Foo Task"
-task :Foo do 
-     puts "Hello world"
+desc "Clean"
+task :Clean do 
+     puts "Clean"
 end
 

@@ -5,7 +5,7 @@ work in Rake, but integrate with any tool that supports Ant. The generated build
 exec on the Rake file. 
 
 
-Example
+Sample rakefile
 ---
 	require 'anttrap'
 	
@@ -23,10 +23,23 @@ Example
 		puts "Hello world"
 	end
 
+Generating an Ant Build File
+---
+rake AntTrap
+
+Using the Ant Build file in an IDE
+---
+Whenever you the build.xml file is generated, the Ant file will need to be
+refreshed in your IDE. In Eclipse, right click in the Ant view and select "Refresh Buildfiles".
+
+
 Installation
 ---
-gem install anttrap
+Unix:
+sudo gem install anttrap
 
+Windows:
+gem install anttrap
 
 Submitting an Issue
 ---
@@ -40,4 +53,4 @@ operating system. Ideally, a bug report should include a pull request with faili
 Copyright
 ---
 Copyright (c) 2011 Dave Parfitt
-See [LICENSE](https://github.com/metadave/anttrap/LICENSE) for details.
+See [LICENSE](https://github.com/metadave/anttrap/blob/LICENSE) for details.

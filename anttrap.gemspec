@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = "anttrap"
   s.summary = "Generates an Ant build file from a Rakefile so Rake can be used from a Java IDE"
-  s.description = File.read(File.join(File.dirname(__FILE__),'README'))
+  s.description = File.read(File.join(File.dirname(__FILE__),'README.md'))
   s.requirements = "Rake, Ant"
   s.author = "Dave Parfitt"
   s.email = "diparfitt@gmail.com"

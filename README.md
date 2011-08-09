@@ -61,12 +61,14 @@ Using the Ant Build file in an IDE
 ---
 Simply use the Ant build file in your favorite IDE like you always have. Each time you modify the rakefile, be sure to run "rake AntTrap" (or just run the AntTrap task from your IDE). 
 
-Compiling Multiple Java Files from Rake
----
-see the [sample rakefile](http://github.com/metadave/anttrap/samples/blob/rakefile)
-
 Whenever you the build.xml file is generated, the Ant file will need to be
 refreshed in your IDE. In Eclipse, right click in the Ant view and select "Refresh Buildfiles".
+
+
+Compiling Multiple Java Files from Rake
+---
+see the [sample rakefile](https://github.com/metadave/anttrap/blob/master/samples/rakefile)
+
 
 
 Installation

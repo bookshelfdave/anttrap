@@ -6,13 +6,10 @@ exec on the selected Rake task.
 
 Use It In Your Favorite IDE
 ---
-Tested on:
-
-IntelliJ Idea 10.5.1
-
-NetBeans 7.0
-
-Eclipse Indigo
+	Tested on:
+	IntelliJ Idea 10.5.1
+	NetBeans 7.0
+	Eclipse Indigo
 
 
 Sample rakefile

@@ -8,21 +8,21 @@ exec on the Rake file.
 Example
 ------------
 
-require 'anttrap'
+	require 'anttrap'
 
-AntTrap.antproject="RakeFile #{Time.new}"
-AntTrap.rake = '/usr/bin/rake'
-AntTrap.rakeargs = ["-v"]
+	AntTrap.antproject="RakeFile #{Time.new}"
+	AntTrap.rake = '/usr/bin/rake'
+	AntTrap.rakeargs = ["-v"]
 
-desc "The Bar task"
-task :Bar do
-  puts "Bar!"
-end
+	desc "The Bar task"
+	task :Bar do
+	     puts "Bar!"
+	end
 
-desc "The Foo Task"
-task :Foo do 
-     puts "Hello world"
-end
+	desc "The Foo Task"
+	task :Foo do 
+	     puts "Hello world"
+	end
 
 
 

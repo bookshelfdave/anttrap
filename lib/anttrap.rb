@@ -19,13 +19,14 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-require 'rubygems'
 require 'builder'
 
 module AntTrap
   @@rake = "rake"
   @@antfile = "build.xml"
-  @@antproject = "Rakeproject"
+  @@antproject = "Rake Project"
+  @@rakeargs = []
+  
   def self.rake
     @@rake
   end
@@ -46,25 +47,37 @@ module AntTrap
   def self.antproject=(v)
     @@antproject=v
   end
-end
-
-
-task :anttrap do
   
-  xml = Builder::XmlMarkup.new( :indent => 2 )
-  xml.instruct! :xml, :encoding => "ASCII"  
-  proj = xml.project("name" => AntTrap.antproject) do |p|
-    Rake::Task.tasks().each do |task|
-      p.target("name"=>task) do |t|
-        t.exec("executable"=>AntTrap.rake) do |e|
-          e.arg("value"=>task)
+  def self.rakeargs
+    @@rakeargs
+  end
+
+  def self.rakeargs=(v)
+    @@rakeargs = v
+  end
+
+  desc "Generate an ant build file from this Rake file"
+  task :AntTrap do |at|
+    xml = Builder::XmlMarkup.new( :indent => 2 )
+    xml.instruct! :xml, :encoding => "ASCII"  
+    proj = xml.project("name" => AntTrap.antproject) do |p|
+      Rake::Task.tasks().each do |task|
+        p.target("name"=>task, "description"=>task.comment) do |t|
+          t.exec("executable"=>AntTrap.rake) do |e|
+            AntTrap.rakeargs.each do |arg|
+              e.arg("value"=>arg)
+            end
+            e.arg("value"=>task)
+          end
         end
       end
     end
+    File.open(AntTrap.antfile,"w+") do |f|
+      f.puts proj
+    end
   end
-  File.open(AntTrap.antfile,"w+") do |f|
-    f.puts proj
-  end
+  
 end
+
 
 

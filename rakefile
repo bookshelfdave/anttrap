@@ -1,4 +1,5 @@
-require 'lib/anttrap.rb'
+require 'rubygems'
+require 'anttrap'
 
 
 AntTrap.antproject="RakeFile #{Time.new}"

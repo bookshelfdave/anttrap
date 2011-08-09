@@ -2,7 +2,7 @@ The AntTrap Ruby Gem
 ====================
 A tiny Gem that can generate an Apache Ant build file from a Rakefile. This allows for a developer to
 work in Rake, but integrate with any tool that supports Ant. The generated build file simply calls
-exec on the Rake file. As of 8/9/2011, the only tool I have tested so far is Eclipse.
+exec on the selected Rake task. As of 8/9/2011, the only tool I have tested so far is Eclipse.
 
 
 Sample rakefile

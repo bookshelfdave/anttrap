@@ -17,9 +17,34 @@ AntTrap.rake = '/usr/bin/rake'
 # additional arguments to pass to rake
 AntTrap.rakeargs = ["-v"]
 
-desc "Compile Java"
-task :Compile do
-  puts "Compiling Java!"
+task :default => [:Compile]
+
+sources = FileList['src/**/*.java']
+classes = sources.ext('class')
+jars = FileList['lib/**/*.jar']
+
+desc "Compiles all Java sources files in the project"
+task :Compile => classes do
+  # see the javac command line docs regarding @ syntax for javac
+  File.open("javac.classes","w+") do |f|
+    sources.each {|t| f.puts "#{t}" }
+  end
+
+  File.open("javac.options","w+") do |f|
+    f.puts "-d rakeout"
+    f.puts "-g"
+    f.puts '-sourcepath src'
+  end
+  cp = jars.join(";")
+  command =<<EOF
+javac -J-Xms256m -J-Xmx256m -classpath #{cp} @javac.options @javac.classes
+EOF
+  sh command
+end
+
+desc "Deploy source to server"
+task :Deploy => classes do
+  puts "Deploying!!!"
 end
 
 desc "Clean"

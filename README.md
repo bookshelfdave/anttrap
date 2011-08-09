@@ -86,9 +86,9 @@ features. Before submitting a bug report or feature request, check to make sure 
 been submitted. You can indicate support for an existing issuse by voting it up. When submitting a
 bug report, please include a [Gist](http://gist.github.com/) that includes a stack trace and any
 details that may be necessary to reproduce the bug, including your gem version, Ruby version, and
-operating system. Ideally, a bug report should include a pull request with failing specs.
+operating system. 
 
 Copyright
 ---
 Copyright (c) 2011 Dave Parfitt
-See [LICENSE](https://github.com/metadave/anttrap/blob/LICENSE) for details.
+See the LICENSE file for more details.

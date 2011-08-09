@@ -22,6 +22,7 @@
 require 'builder'
 
 module AntTrap
+  # these are just the defaults
   @@rake = "rake"
   @@antfile = "build.xml"
   @@antproject = "Rake Project"
@@ -56,7 +57,7 @@ module AntTrap
     @@rakeargs = v
   end
 
-  desc "Generate an ant build file from this Rake file"
+  desc "Generate an Ant build file from this Rake file"
   task :AntTrap do |at|
     xml = Builder::XmlMarkup.new( :indent => 2 )
     xml.instruct! :xml, :encoding => "ASCII"  

@@ -1,3 +1,5 @@
 A tiny Gem that can generate an Apache Ant build file from a Rakefile. This allows for a developer to work in Rake, but integrate with any tool that supports Ant. The generated build file simply calls exec on the selected Rake task. 
 
+If you find this Gem useful, please send feedback to diparfitt at gmail dot com.
+
 see README.md

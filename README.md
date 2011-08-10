@@ -95,7 +95,11 @@ bug report, please include a [Gist](http://gist.github.com/) that includes a sta
 details that may be necessary to reproduce the bug, including your gem version, Ruby version, and
 operating system. 
 
+Feedback
+---
+If you find this Gem useful, please send feedback to diparfitt at gmail dot com.
+
 Copyright
 ---
 Copyright (c) 2011 Dave Parfitt
-See the LICENSE file for more details.
+

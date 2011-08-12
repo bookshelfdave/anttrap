@@ -10,6 +10,9 @@ require 'anttrap'
 # adding a timestamp may be helpful to you
 AntTrap.antproject="RakeFile #{Time.new}"
 
+# Generate a file named build.xml
+AntTrap.antfile="build.xml"
+
 # path to the rake binary
 # the default is rake, but you can use what you like here
 AntTrap.rake = '/usr/bin/rake'

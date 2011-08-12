@@ -21,38 +21,58 @@
 
 require 'builder'
 
+
+# A tiny Gem that can generate an Apache Ant build file from a Rakefile. 
+# This allows a developer to use Rake as a build tool for Java based 
+# projects, but integrate with any tool that supports Ant. The 
+# generated build file simply executes the selected Rake task. 
+#
+# Requiring the AntTrap module in your rakefile automatically adds 
+# the AntTrap rake task.
 module AntTrap
   # these are just the defaults
   @@rake = "rake"
   @@antfile = "build.xml"
   @@antproject = "Rake Project"
   @@rakeargs = []
-  
+
+  # Get the full path (including executable name) to rake
   def self.rake
     @@rake
   end
+
+  # Set the full path (including executable name) to rake
   def self.rake=(v)
     @@rake = v
   end
-
+  
+  # Get the name of the generated Ant file
   def self.antfile
     @@antfile
   end
+
+  # Set the name of the generated Ant file
   def self.antfile=(v)
     @@antfile = v
   end
 
+  # Get the name of the Ant project.
   def self.antproject
     @@antproject
   end
+
+  # Set the name of the Ant project.
   def self.antproject=(v)
     @@antproject=v
   end
-  
+ 
+  # Get extra command line args to pass to the rake executable 
   def self.rakeargs
     @@rakeargs
   end
 
+  # Set extra command line args to pass to the rake executable.
+  # This property expects a list
   def self.rakeargs=(v)
     @@rakeargs = v
   end

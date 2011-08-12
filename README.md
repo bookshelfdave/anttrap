@@ -19,6 +19,7 @@ Sample rakefile
 	AntTrap.antproject="RakeFile #{Time.new}"
 	AntTrap.rake = '/usr/bin/rake'
 	AntTrap.rakeargs = ["-v"]
+	AntTrap.antfile="build.xml"
 	
 	desc "The Bar task"
 	task :Bar do

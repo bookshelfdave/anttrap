@@ -10,7 +10,7 @@ Use It In Your Favorite IDE
 	IntelliJ Idea 10.5.1
 	NetBeans 7.0
 	Eclipse Indigo
-
+	Windows & Linux
 
 Sample rakefile
 ---

@@ -23,6 +23,10 @@ end
 # additional arguments to pass to rake
 AntTrap.rakeargs = ["-v"]
 
+JAVA_HOME=ENV['JAVA_HOME']
+JAVAC = "#{JAVA_HOME}//bin//javac"
+JAR = "#{JAVA_HOME}//bin//jar"
+
 task :default => [:Compile]
 
 sources = FileList['src/**/*.java']
@@ -43,7 +47,7 @@ task :Compile => sources do
   end
   cp = jars.join(";")
   command =<<EOF
-javac -J-Xms256m -J-Xmx256m -classpath #{cp} @javac.options @javac.classes
+#{JAVAC} -J-Xms256m -J-Xmx256m -classpath #{cp} @javac.options @javac.classes
 EOF
   sh command
 end

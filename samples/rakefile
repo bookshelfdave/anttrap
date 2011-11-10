@@ -5,6 +5,7 @@
 #https://gist.github.com/54177
 
 require 'anttrap'
+require 'rbconfig'
 
 # the name of the Ant project.
 # adding a timestamp may be helpful to you
@@ -15,7 +16,9 @@ AntTrap.antfile="build.xml"
 
 # path to the rake binary
 # the default is rake, but you can use what you like here
-AntTrap.rake = '/usr/bin/rake'
+if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/ then
+  AntTrap.rake = 'rake.bat'
+end
 
 # additional arguments to pass to rake
 AntTrap.rakeargs = ["-v"]
@@ -27,7 +30,7 @@ classes = sources.ext('class')
 jars = FileList['lib/**/*.jar']
 
 desc "Compiles all Java sources files in the project"
-task :Compile => classes do
+task :Compile => sources do
   # see the javac command line docs regarding @ syntax for javac
   File.open("javac.classes","w+") do |f|
     sources.each {|t| f.puts "#{t}" }
